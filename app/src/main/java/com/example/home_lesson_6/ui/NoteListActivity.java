@@ -1,4 +1,4 @@
-package com.example.home_lesson_6;
+package com.example.home_lesson_6.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.home_lesson_6.R;
+import com.example.home_lesson_6.domain.NotesRepo;
+import com.example.home_lesson_6.impl.NotesRepoImpl;
+import com.example.home_lesson_6.ui.NoteEditActivity;
+
 public class NoteListActivity extends AppCompatActivity {
     private Toolbar toolbar;
+
+    private NotesRepo notesRepo = new NotesRepoImpl();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,19 +31,22 @@ public class NoteListActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.notes_list_menu, menu);
+        getMenuInflater().inflate(R.menu.notes_list_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.new_note_menu) {
-            Intent intent = new Intent(this, NoteEditActivity.class);
-            startActivity(intent);
-                return true;
-            }
-                return super.onOptionsItemSelected(item);
+            openNoteScreen();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
 
+    }
+
+    private void openNoteScreen(){
+        Intent intent = new Intent(this, NoteEditActivity.class);
+        startActivity(intent);
     }
 }

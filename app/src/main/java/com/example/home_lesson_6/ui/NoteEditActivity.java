@@ -1,8 +1,10 @@
-package com.example.home_lesson_6;
+package com.example.home_lesson_6.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.home_lesson_6.R;
 
 public class NoteEditActivity extends AppCompatActivity {
 
