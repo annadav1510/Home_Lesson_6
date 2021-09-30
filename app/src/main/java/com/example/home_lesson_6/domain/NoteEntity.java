@@ -9,7 +9,7 @@ public class NoteEntity {
     private String title;
     private String detail;
 
-    public NoteEntity(@Nullable Integer id, String title, String detail) {
+    public NoteEntity(String title, String detail) {
         this.id = id;
         this.title = title;
         this.detail = detail;
