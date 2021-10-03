@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Home_Lesson_6</string>
     <string name="note">"Создать заметку"</string>
+    <string name="hint_title">"Заголовок"</string>
+    <string name="hint_tetxt">"Текст заметки"</string>
+    <string name="title_save">"Сохранить"</string>
+    <string name="calendar">""Дата заметки</string>
+
+    <string name="error_empte_field">"Поле не заполнено"</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.example.home_lesson_6.ui;
 
+import android.content.ContentValues;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,6 +15,7 @@ public class NoteEditActivity extends AppCompatActivity {
     private EditText titleEditText;
     private EditText detailEditText;
     private Button saveButton;
+    private EditText calendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,4 +33,5 @@ public class NoteEditActivity extends AppCompatActivity {
             );
         });
     }
+
 }

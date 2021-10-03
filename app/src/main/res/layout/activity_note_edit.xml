@@ -12,18 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size_name"
-        android:hint="Заголовок"/>
+        android:hint="@string/hint_title"/>
 
     <EditText
         android:id="@+id/detail_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size_text"
-        android:hint="Текст заметки"/>
+        android:hint="@string/hint_tetxt"/>
+
+    <EditText
+        android:id="@+id/mtrl_calendar_day_selector_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/calendar"/>
 
     <Button
         android:id="@+id/save_button"
-        android:text="Сохранить"
+        android:text="@string/title_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

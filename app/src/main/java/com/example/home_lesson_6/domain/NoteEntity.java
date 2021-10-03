@@ -2,12 +2,15 @@ package com.example.home_lesson_6.domain;
 
 import androidx.annotation.Nullable;
 
+import java.util.Calendar;
+
 public class NoteEntity {
 
     @Nullable
     private Integer id;
     private String title;
     private String detail;
+    private Calendar createData;
 
     public NoteEntity(String title, String detail) {
         this.id = id;
@@ -34,6 +37,10 @@ public class NoteEntity {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public void setCreateData(Calendar createData) {
+        this.createData = createData;
     }
 
 
