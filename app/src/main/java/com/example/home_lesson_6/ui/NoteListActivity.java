@@ -46,14 +46,14 @@ public class NoteListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.new_note_menu) {
-            openNoteScreen();
+            openNoteScreen(null);
             return true;
         }
         return super.onOptionsItemSelected(item);
 
     }
 
-    private void openNoteScreen(){
+    private void openNoteScreen(@NonNull NoteEntity item){
         Intent intent = new Intent(this, NoteEditActivity.class);
         startActivity(intent);
     }
@@ -67,7 +67,13 @@ public class NoteListActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+        adapter.setOnClickListener(this::onItemClick);
+        
         adapter.setData(notesRepo.getNotes());
+    }
+
+    private void onItemClick(NoteEntity item){
+        openNoteScreen(item);
     }
 
     private void fillRepoByTestValues(){
