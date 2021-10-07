@@ -19,11 +19,9 @@ import com.example.home_lesson_6.impl.NotesRepoImpl;
 import com.example.home_lesson_6.ui.NoteEditActivity;
 
 public class NoteListActivity extends AppCompatActivity {
-    private Toolbar toolbar;
-    private RecyclerView recyclerView;
 
-    private NotesRepo notesRepo = new NotesRepoImpl();
-    private NotesAdapter adapter = new NotesAdapter();
+    private final NotesRepo notesRepo = new NotesRepoImpl();
+    private final NotesAdapter adapter = new NotesAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,30 +51,30 @@ public class NoteListActivity extends AppCompatActivity {
 
     }
 
-    private void openNoteScreen(@NonNull NoteEntity item){
+    private void openNoteScreen(@NonNull NoteEntity item) {
         Intent intent = new Intent(this, NoteEditActivity.class);
         startActivity(intent);
     }
 
-    private void initToolbar(){
-        toolbar = findViewById(R.id.toolbar);
+    private void initToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
-    private void initRecycler(){
-        recyclerView = findViewById(R.id.recycler_view);
+    private void initRecycler() {
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         adapter.setOnClickListener(this::onItemClick);
-        
+
         adapter.setData(notesRepo.getNotes());
     }
 
-    private void onItemClick(NoteEntity item){
+    private void onItemClick(NoteEntity item) {
         openNoteScreen(item);
     }
 
-    private void fillRepoByTestValues(){
+    private void fillRepoByTestValues() {
         notesRepo.createNote(new NoteEntity("Заметка 1", "текст текст текст текст текст текст "));
         notesRepo.createNote(new NoteEntity("Заметка 2", "текст текст текст текст текст текст текст"));
         notesRepo.createNote(new NoteEntity("Заметка 3", "текст текст текст текст текст текст текст"));
@@ -94,4 +92,6 @@ public class NoteListActivity extends AppCompatActivity {
         notesRepo.createNote(new NoteEntity("Заметка 15", "текст текст текст текст текст текст текст"));
         notesRepo.createNote(new NoteEntity("Заметка 16", "текст текст текст текст текст текст"));
     }
+
+
 }
